@@ -44,7 +44,7 @@ A continuación se muestra el flujo de comunicación entre los diferentes micros
 ### Diagrama Entidad-Relación (ERD)
 El diseño de la base de datos asegura integridad y escalabilidad.
 
-![Diagrama ERD](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/blob/main/Pruebas_y_Flujo/DbDiagram.png?raw=true)
+![Diagrama ERD](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/blob/main/Pruebas_y_Flujo/FlujoDMH-Certifiación.png?raw=true)
 **Tablas Principales:**
 1. **Users**: Información de los usuarios.
 2. **Accounts**: Gestión de cuentas bancarias.
