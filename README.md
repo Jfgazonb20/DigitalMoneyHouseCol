@@ -32,20 +32,19 @@ DMH es una aplicación financiera diseñada para permitir la gestión de cuentas
 
 ---
 
-## ⚙️ Arquitectura del Sistema
+## 🛠 Arquitectura del Sistema
+
 ### Diagrama de Componentes
 A continuación se muestra el flujo de comunicación entre los diferentes microservicios:
 
-![Flujo de Certificación]"C:\Users\PIPEPC\Downloads\FlujoDMH-Certifiación.png")
+![Flujo de Certificación](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/blob/main/Pruebas_y_Flujo/FlujoDMH-Certifiación.png?raw=true)
 
----
+## 📁 Modelo de Base de Datos
 
-## 🗄️ Modelo de Base de Datos
 ### Diagrama Entidad-Relación (ERD)
 El diseño de la base de datos asegura integridad y escalabilidad.
 
-![Diagrama ERD]("C:\Users\PIPEPC\Downloads\FlujoDMH-Certifiación.png")
-
+![Diagrama ERD](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/blob/main/Pruebas_y_Flujo/DbDiagram.png?raw=true)
 **Tablas Principales:**
 1. **Users**: Información de los usuarios.
 2. **Accounts**: Gestión de cuentas bancarias.
