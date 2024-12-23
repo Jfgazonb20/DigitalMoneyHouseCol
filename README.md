@@ -36,7 +36,7 @@ DMH es una aplicación financiera diseñada para permitir la gestión de cuentas
 ### Diagrama de Componentes
 A continuación se muestra el flujo de comunicación entre los diferentes microservicios:
 
-![Flujo de Certificación](ruta_a_tu_imagen/FlujoDMH-Certificación.png)
+![Flujo de Certificación]"C:\Users\PIPEPC\Downloads\FlujoDMH-Certifiación.png")
 
 ---
 
@@ -44,7 +44,7 @@ A continuación se muestra el flujo de comunicación entre los diferentes micros
 ### Diagrama Entidad-Relación (ERD)
 El diseño de la base de datos asegura integridad y escalabilidad.
 
-![Diagrama ERD](ruta_a_tu_imagen/dbdiagram.png)
+![Diagrama ERD]("C:\Users\PIPEPC\Downloads\FlujoDMH-Certifiación.png")
 
 **Tablas Principales:**
 1. **Users**: Información de los usuarios.
