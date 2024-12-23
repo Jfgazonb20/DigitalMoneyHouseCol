@@ -34,7 +34,7 @@ A continuación se muestra el flujo de comunicación entre los microservicios pr
 
 ### Diagrama Entidad-Relación (ERD)
 
-![Diagrama ERD](Pruebas_y_Flujo/DbDiagram.png)
+![Diagrama ERD](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/blob/main/Pruebas_y_Flujo/FlujoDMH-Certifiación.png?raw=true)
 
 ### Tablas Principales:
 
