@@ -1,51 +1,43 @@
-# Digital Money House (DMH) - Backend
+# 💳 Digital Money House (DMH)
 
-## 📖 Descripción
-DMH es una aplicación financiera diseñada para permitir la gestión de cuentas bancarias, transferencias de dinero, y monitoreo de actividades, implementando una arquitectura de microservicios para garantizar escalabilidad, seguridad y eficiencia.
-
----
-
-## 📋 Características Principales
-### Usuarios (Users Service)
-- **Registro de usuarios**: Creación de cuentas con generación automática de CVU y alias.
-- **Inicio de sesión**: Autenticación con generación de tokens JWT.
-- **Cierre de sesión**: Invalidación de tokens.
-- **Gestión de perfiles**: Visualización y actualización de información personal.
-
-### Tarjetas (Cards Service)
-- **Gestión de tarjetas**: CRUD completo para tarjetas asociadas a cuentas.
-
-### Transacciones (Transactions Service)
-- **Transferencias**: Transferencia de dinero entre cuentas utilizando CVU.
-- **Actividades**: Registro y consulta de todas las actividades de una cuenta.
-- **Saldo**: Cálculo en tiempo real del saldo disponible.
-
-### API Gateway
-- Enrutamiento centralizado de solicitudes.
-- Validación de tokens JWT.
-
-### Config Server
-- Centralización de configuraciones.
-
-### Eureka Server
-- Descubrimiento y registro de microservicios.
+Bienvenido a **Digital Money House (DMH)**, una solución backend diseñada para gestionar usuarios, transacciones y tarjetas, utilizando una arquitectura de microservicios. Este proyecto implementa una comunicación eficiente entre servicios, autenticación segura y manejo centralizado de configuración.
 
 ---
 
-## 🛠 Arquitectura del Sistema
+## 🛠️ Arquitectura del Sistema
 
 ### Diagrama de Componentes
-A continuación se muestra el flujo de comunicación entre los diferentes microservicios:
 
-![Flujo de Certificación](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/blob/main/Pruebas_y_Flujo/FlujoDMH-Certifiación.png?raw=true)
+A continuación se muestra el flujo de comunicación entre los microservicios principales del sistema:
 
-## 📁 Modelo de Base de Datos
+![Flujo de Microservicios](Pruebas_y_Flujo/FlujoMicros.webp)
+
+### Descripción del Flujo
+
+1. **API Gateway**
+   - Encargado de redirigir las solicitudes al servicio correspondiente.
+   - Gestiona la seguridad de las peticiones mediante validación de JWT.
+2. **Eureka Server**
+   - Actúa como el registro central de servicios, permitiendo el descubrimiento dinámico de microservicios.
+3. **Config Server**
+   - Centraliza y proporciona la configuración necesaria para todos los microservicios desde un repositorio remoto en GitHub.
+4. **Users-Service**
+   - Maneja el registro, autenticación y perfiles de usuarios.
+5. **Cards-Service**
+   - Gestiona el CRUD de tarjetas asociadas a cuentas de usuario.
+6. **Transactions-Service**
+   - Procesa transferencias, ingresos y consultas de saldo.
+
+---
+
+## 📂 Modelo de Base de Datos
 
 ### Diagrama Entidad-Relación (ERD)
-El diseño de la base de datos asegura integridad y escalabilidad.
 
-![Diagrama ERD](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/blob/main/Pruebas_y_Flujo/FlujoDMH-Certifiación.png?raw=true)
-**Tablas Principales:**
+![Diagrama ERD](Pruebas_y_Flujo/DbDiagram.png)
+
+### Tablas Principales:
+
 1. **Users**: Información de los usuarios.
 2. **Accounts**: Gestión de cuentas bancarias.
 3. **Cards**: Administración de tarjetas.
@@ -53,106 +45,85 @@ El diseño de la base de datos asegura integridad y escalabilidad.
 
 ---
 
-## 🛠️ Microservicios Implementados
+## 🚀 Endpoints Implementados
 
-### Users Service
-#### Endpoints Principales:
-- `POST /api/register` - Registro de usuarios.
-- `POST /api/login` - Inicio de sesión y generación de JWT.
-- `POST /api/logout` - Invalidación de tokens.
+### **Users Service**
+- **POST /api/register**: Registro de usuarios.
+- **POST /api/login**: Inicio de sesión.
+- **POST /api/logout**: Cierre de sesión.
+- **GET /users/{id}**: Consulta de perfil.
+- **PATCH /users/{id}**: Actualización de datos del perfil.
 
-#### Seguridad:
-- Autenticación mediante JWT.
-- Validación de roles.
+### **Cards Service**
+- **GET /api/accounts/{accountId}/cards**: Obtener tarjetas de una cuenta.
+- **POST /api/accounts/{accountId}/cards**: Crear tarjeta.
+- **DELETE /api/accounts/{accountId}/cards/{cardId}**: Eliminar tarjeta.
 
----
-
-### Cards Service
-#### Endpoints Principales:
-- `GET /api/accounts/{accountId}/cards` - Obtener todas las tarjetas.
-- `POST /api/accounts/{accountId}/cards` - Registrar una nueva tarjeta.
-
-#### Validaciones:
-- Evitar duplicados de tarjetas.
-- Manejo de errores (404, 409, 400).
+### **Transactions Service**
+- **GET /api/accounts/{id}/balance**: Consulta de saldo.
+- **GET /api/accounts/{id}/activity**: Lista de actividades.
+- **POST /api/accounts/{id}/transferences**: Registro de transferencias entre cuentas.
 
 ---
 
-### Transactions Service
-#### Endpoints Principales:
-- `POST /api/accounts/{id}/transferences` - Registrar una transferencia.
-- `GET /api/accounts/{id}/activity` - Consultar actividades de una cuenta.
-- `GET /api/accounts/{id}/balance` - Consultar saldo.
+## 🔐 Seguridad
 
-#### Validaciones:
-- Verificación de saldo suficiente para transferencias.
-- Validación de CVU destino.
+- **JWT (JSON Web Tokens)**: Implementado en todos los microservicios para asegurar las peticiones.
+- **Roles y Permisos**: Acceso controlado según el rol del usuario.
 
 ---
 
-### API Gateway
-#### Funcionalidad:
-- Enrutamiento de solicitudes hacia los servicios de **Users**, **Cards** y **Transactions**.
-- Validación de autenticación mediante JWT.
+## ⚙️ Configuración Centralizada
 
-#### Rutas Configuradas:
-- `/api/users/**`
-- `/api/accounts/**`
+El **Config Server** gestiona las configuraciones de los microservicios desde un repositorio remoto. Las propiedades clave incluyen:
 
----
-
-### Config Server
-#### Funcionalidad:
-- Centralización de configuraciones para todos los microservicios.
-- Configuración en un repositorio remoto de GitHub.
+```properties
+# Configuración de GitHub
+spring.cloud.config.server.git.uri=https://github.com/Jfgazonb20/config-server.git
+spring.cloud.config.server.git.username=username
+spring.cloud.config.server.git.password=acceso_token
+```
 
 ---
 
-### Eureka Server
-#### Funcionalidad:
-- Descubrimiento y registro de servicios:
-  - Users Service
-  - Cards Service
-  - Transactions Service
-  - API Gateway
-  - Config Server
+## 📊 Monitoreo y Actuator
+
+- **Actuator** habilitado para exponer métricas y salud de los servicios.
+- URLs principales:
+  - `/actuator/health`
+  - `/actuator/info`
 
 ---
 
-## 🚀 Pruebas Pendientes
-### Unitarias
-- Controladores y servicios para los microservicios.
+## 📋 Tareas Pendientes
 
-### De Integración
-- Flujo completo entre microservicios.
-
----
-
-## 📊 Documentación Pendiente
-- Diagrama de Secuencia para flujos como transferencias y registro de actividades.
-- Ejemplos detallados de solicitudes y respuestas para todos los endpoints.
+1. **Pruebas Unitarias e Integración**:
+   - Controladores y servicios de Users, Cards y Transactions.
+2. **Documentación Completa**:
+   - Ejemplo de respuestas en todos los endpoints (Swagger).
+   - Diagramas de secuencia para transferencias y cálculos de saldo.
 
 ---
 
-## 📝 Cómo Ejecutar el Proyecto
-1. Clonar el repositorio.
+## 🌐 Cómo Ejecutar el Proyecto
+
+1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
+   git clone https://github.com/Jfgazonb20/DigitalMoneyHouseCol.git
    ```
-2. Configurar las propiedades del servidor Config.
-3. Ejecutar los microservicios en el siguiente orden:
-   - Config Server
-   - Eureka Server
-   - API Gateway
-   - Users Service, Cards Service, Transactions Service.
-4. Acceder a la aplicación a través del API Gateway.
+2. Navega al directorio de cada microservicio y ejecuta:
+   ```bash
+   mvn spring-boot:run
+   ```
+3. Asegúrate de que todos los servicios están registrados en **Eureka Server**.
 
 ---
 
-## ✨ Contribuciones
-Si deseas contribuir, crea un pull request con tus cambios. Todos los aportes son bienvenidos.
+## 🖼️ Recursos Visuales Adicionales
+
+1. **Diagrama de Flujo**: Representa la interacción entre los servicios y componentes.
+2. **Modelo ERD**: Asegura la integridad y escalabilidad de la base de datos.
 
 ---
 
-## 🛡️ Licencia
-Este proyecto está bajo la Licencia MIT. Puedes consultar más detalles en el archivo LICENSE del repositorio.
+Con este README, cualquier desarrollador puede comprender y contribuir al proyecto **Digital Money House (DMH)** de manera efectiva. ¡Gracias por tu interés en esta solución escalable y robusta!
