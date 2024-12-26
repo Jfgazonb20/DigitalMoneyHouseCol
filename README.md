@@ -32,7 +32,7 @@ Bienvenido a **Digital Money House (DMH)**, una solución backend diseñada para
 
 ### Diagrama Entidad-Relación (ERD)
 
-![Diagrama ERD](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/blob/main/Pruebas_y_Flujo/FlujoDMH-Certifiación.png?raw=true)
+![Diagrama ERD](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/blob/main/Pruebas_y_Flujo/Flujo.png?raw=true)
 
 ### Tablas Principales:
 
