@@ -8,8 +8,6 @@ Bienvenido a **Digital Money House (DMH)**, una solución backend diseñada para
 
 ### Diagrama de Componentes
 
-A continuación se muestra el flujo de comunicación entre los microservicios principales del sistema:
-
 ![Flujo de Microservicios](Pruebas_y_Flujo/FlujoMicros.webp)
 
 ### Descripción del Flujo
@@ -86,8 +84,13 @@ spring.cloud.config.server.git.password=acceso_token
 
 ---
 
-## 📊 Monitoreo y Actuator
+## 📋 Pruebas y Monitoreo
 
+### Pruebas Automatizadas
+- **Unitarias**: Pruebas detalladas de controladores y servicios en Users, Cards y Transactions.
+- **De Integración**: Verificación del flujo completo entre microservicios a través del API Gateway.
+
+### Monitoreo con Actuator
 - **Actuator** habilitado para exponer métricas y salud de los servicios.
 - URLs principales:
   - `/actuator/health`
@@ -95,13 +98,24 @@ spring.cloud.config.server.git.password=acceso_token
 
 ---
 
-## 📋 Tareas Pendientes
+## 📥 Descargar Postman Collection
 
-1. **Pruebas Unitarias e Integración**:
-   - Controladores y servicios de Users, Cards y Transactions.
-2. **Documentación Completa**:
-   - Ejemplo de respuestas en todos los endpoints (Swagger).
-   - Diagramas de secuencia para transferencias y cálculos de saldo.
+**Para probar los endpoints directamente, hemos proporcionado una Postman Collection lista para usar.**
+
+- [Descargar DMH Postman Collection](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/raw/main/Postman_Collection/DMHCERTIF.json)
+
+### Cómo Importar la Collection
+
+1. Descarga la colección desde el enlace proporcionado.
+2. Abre Postman y selecciona **Importar**.
+3. Arrastra y suelta el archivo `.json` descargado o selecciona el archivo desde tu explorador.
+
+---
+
+## 📊 Recursos Visuales Adicionales
+
+1. **Diagrama de Flujo**: Representa la interacción entre los servicios y componentes.
+2. **Modelo ERD**: Asegura la integridad y escalabilidad de la base de datos.
 
 ---
 
@@ -116,13 +130,6 @@ spring.cloud.config.server.git.password=acceso_token
    mvn spring-boot:run
    ```
 3. Asegúrate de que todos los servicios están registrados en **Eureka Server**.
-
----
-
-## 🖼️ Recursos Visuales Adicionales
-
-1. **Diagrama de Flujo**: Representa la interacción entre los servicios y componentes.
-2. **Modelo ERD**: Asegura la integridad y escalabilidad de la base de datos.
 
 ---
 
