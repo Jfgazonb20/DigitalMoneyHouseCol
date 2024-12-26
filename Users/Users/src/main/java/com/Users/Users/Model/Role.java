@@ -13,6 +13,14 @@ public class Role {
     @Column(nullable = false, unique = true)
     private String name;
 
+    // Constructor vacío requerido por JPA
+    public Role() {}
+
+    // Constructor adicional para inicialización rápida
+    public Role(String name) {
+        this.name = name;
+    }
+
     // Getters y Setters
     public Long getId() {
         return id;
