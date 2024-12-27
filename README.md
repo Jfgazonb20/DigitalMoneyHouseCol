@@ -102,7 +102,7 @@ spring.cloud.config.server.git.password=acceso_token
 
 **Para probar los endpoints directamente, hemos proporcionado una Postman Collection lista para usar.**
 
-- [Descargar DMH Postman Collection](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/raw/main/Postman_Collection/DMHCERTIF.json)
+[Descargar DMH Postman Collection](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/raw/main/Pruebas_y_Flujo/DMHCERTIF.postman_collection.json)
 
 ### Cómo Importar la Collection
 
