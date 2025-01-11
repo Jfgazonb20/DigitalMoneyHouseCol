@@ -10,6 +10,15 @@
         <option value="$PROJECT_DIR$/Transactions/Transactions/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/server/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-server/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/users-service/Users/pom.xml" />
+        <option value="$PROJECT_DIR$/transactions-service/Transactions/pom.xml" />
+        <option value="$PROJECT_DIR$/transactions-service/transactions-service/pom.xml" />
+        <option value="$PROJECT_DIR$/users-server/Users/pom.xml" />
+        <option value="$PROJECT_DIR$/users-server/users-server/pom.xml" />
+        <option value="$PROJECT_DIR$/transactions-server/transactions-service/pom.xml" />
+        <option value="$PROJECT_DIR$/transactions-server/transactions-server/pom.xml" />
+        <option value="$PROJECT_DIR$/cards-server/cards-server/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-server/api-gateway/pom.xml" />
       </list>
     </option>
   </component>

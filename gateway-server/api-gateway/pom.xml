@@ -10,10 +10,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>com.api-gateway</groupId>
-	<artifactId>api-gateway</artifactId>
+	<groupId>com.gateway-server</groupId>
+	<artifactId>gateway-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api-gateway</name>
+	<name>gateway-server</name>
 	<description>API Gateway for microservices architecture</description>
 
 	<properties>

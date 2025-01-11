@@ -8,10 +8,10 @@
 		<version>3.4.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.Cards</groupId>
-	<artifactId>Cards</artifactId>
+	<groupId>com.cards-server</groupId>
+	<artifactId>cards-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Cards</name>
+	<name>cards-server</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

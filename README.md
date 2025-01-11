@@ -8,7 +8,7 @@ Bienvenido a **Digital Money House (DMH)**, una solución backend diseñada para
 
 ### Diagrama de Componentes
 
-![Flujo de Microservicios](Pruebas_y_Flujo/Flujo.webp)
+![Flujo de Microservicios](Pruebas_y_Flujo/flujoMicroservicios.png)
 
 ### Descripción del Flujo
 
@@ -32,7 +32,7 @@ Bienvenido a **Digital Money House (DMH)**, una solución backend diseñada para
 
 ### Diagrama Entidad-Relación (ERD)
 
-![Diagrama ERD](https://github.com/Jfgazonb20/DigitalMoneyHouseCol/blob/main/Pruebas_y_Flujo/FlujoDMH-Certifiación.png?raw=true)
+![Diagrama ERD](Pruebas_y_Flujo/FlujoDMH-Certifiación.png)
 
 ### Tablas Principales:
 

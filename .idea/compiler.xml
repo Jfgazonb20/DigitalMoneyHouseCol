@@ -2,27 +2,36 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-gateway" />
         <module name="server" />
-        <module name="Users" />
-        <module name="Transaction" />
+        <module name="users-server" />
+        <module name="cards-server" />
+        <module name="gateway-server" />
+        <module name="transactions-server" />
         <module name="eureka-server" />
-        <module name="Cards" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-gateway" target="21" />
+      <module name="transactions-service" target="21" />
+      <module name="Users" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Cards" options="-parameters" />
-      <module name="Transaction" options="-parameters" />
       <module name="Users" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
+      <module name="cards-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
       <module name="server" options="-parameters" />
+      <module name="transactions-server" options="-parameters" />
+      <module name="transactions-service" options="-parameters" />
+      <module name="users-server" options="-parameters" />
     </option>
   </component>
 </project>
