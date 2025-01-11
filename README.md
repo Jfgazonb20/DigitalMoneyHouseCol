@@ -12,18 +12,18 @@ Bienvenido a **Digital Money House (DMH)**, una solución backend diseñada para
 
 ### Descripción del Flujo
 
-1. **API Gateway**
+1. **Gateway-Server**
    - Encargado de redirigir las solicitudes al servicio correspondiente.
    - Gestiona la seguridad de las peticiones mediante validación de JWT.
-2. **Eureka Server**
+2. **Eureka-Server**
    - Actúa como el registro central de servicios, permitiendo el descubrimiento dinámico de microservicios.
-3. **Config Server**
+3. **Config-Server**
    - Centraliza y proporciona la configuración necesaria para todos los microservicios desde un repositorio remoto en GitHub.
-4. **Users-Service**
+4. **Users-Server**
    - Maneja el registro, autenticación y perfiles de usuarios.
-5. **Cards-Service**
+5. **Cards-Server**
    - Gestiona el CRUD de tarjetas asociadas a cuentas de usuario.
-6. **Transactions-Service**
+6. **Transactions-Server**
    - Procesa transferencias, ingresos y consultas de saldo.
 
 ---
